@@ -1,0 +1,40 @@
+--- origsrc/lxmusic-0.3.0/data/pref-dlg.ui.glade	2009-05-26 17:59:18.000000000 -0500
++++ src/lxmusic-0.3.0/data/pref-dlg.ui.glade	2009-07-20 20:03:25.090711500 -0500
+@@ -15,6 +15,9 @@
+     </columns>
+     <data>
+       <row>
++        <col id="0">Win32</col>
++      </row>
++      <row>
+         <col id="0">Pulse Audio</col>
+       </row>
+       <row>
+@@ -151,6 +154,15 @@
+                                 <property name="visible">True</property>
+                                 <property name="show_tabs">False</property>
+                                 <child>
++                                  <object class="GtkLabel" id="waveout_page">
++                                    <property name="visible">True</property>
++                                    <property name="label" translatable="yes">Use Win32 WaveOut for audio output</property>
++                                  </object>
++                                </child>
++                                <child type="tab">
++                                  <placeholder/>
++                                </child>
++                                <child>
+                                   <object class="GtkVBox" id="pulse_page">
+                                     <property name="visible">True</property>
+                                     <child>
+--- origsrc/lxmusic-0.3.0/src/lxmusic.c	2009-05-26 17:58:03.000000000 -0500
++++ src/lxmusic-0.3.0/src/lxmusic.c	2009-07-20 19:52:04.292556300 -0500
+@@ -72,6 +72,9 @@ typedef struct _UpdateTrack{
+ 
+ 
+ const char* known_plugins[] = {
++#ifdef G_PLATFORM_WIN32
++    "waveout",
++#endif
+     "pulse",
+     "alsa",
+     "ao",
