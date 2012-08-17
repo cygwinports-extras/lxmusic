@@ -1,4 +1,0 @@
-category: Audio
-requires: libglib2.0_0 libgtk2.0_0 libintl8 libnotify4 libxmmsclient-glib1 libxmmsclient6
-sdesc: "GTK+ XMMS2 client"
-ldesc: "LXMusic is a simple GUI XMMS2 client with minimal functionality."
