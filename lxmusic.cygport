@@ -1,0 +1,11 @@
+inherit gnome2
+
+NAME="lxmusic"
+VERSION=0.4.5
+RELEASE=1
+CATEGORY="Audio LXDE"
+SUMMARY="LXDE XMMS2 music player"
+DESCRIPTION="LXMusic is a simple GUI XMMS2 client with minimal functionality."
+HOMEPAGE="http://lxde.org/"
+SRC_URI="mirror://sourceforge/lxde/${NAME}-${VERSION}.tar.gz"
+PATCH_URI="mirror://portage/media-sound/lxmusic/files/lxmusic-0.4.5-libnotify-0.7.patch"
